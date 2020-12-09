@@ -6,7 +6,7 @@ LABEL io.k8s.description="A basic Apache HTTP server child image, uses ONBUILD" 
       io.openshift.tags="apache, httpd"
 EXPOSE 8080
 
-RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/httpd.conf
+RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/conf/httpd.conf
 
 RUN chrgrp -R 0 /var/log/httpd /var/run/httpd && \
     chmod -R g=u /var/log/httpd /var/run/httpd
